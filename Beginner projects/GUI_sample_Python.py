@@ -1,4 +1,4 @@
-"""GUI SAMPLES TKiner"""
+"""GUI SAMPLES TKinter"""
 
 import customtkinter
 
