@@ -1,0 +1,2 @@
+1. Use to build app for Win systems the following commands: pyinstaller main.py -w --onefile
+2. For Android systems: buildozer -v android debug
