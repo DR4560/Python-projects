@@ -20,4 +20,4 @@ streamlit run main.py
 ```
 
 ##Result
-![Output|635x380](data/components_sample.gif)
+![Output|635x380](data/components_sample.ipg)
