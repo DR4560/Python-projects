@@ -1,6 +1,5 @@
-#BUlding a stock prediction web app in python
+#Bгlding a stock prediction web app in python
 #Source code - Patrick Loeber code base
-
 
 import streamlit as st
 from datetime import date
@@ -10,7 +9,6 @@ from prophet import Prophet
 from prophet.plot import plot_plotly
 from plotly import graph_objs as go
 from streamlit import selectbox
-import pandas as pd
 
 START = "2016-01-01"
 TODAY = date.today().strftime("%Y-%m-%d")
@@ -25,7 +23,7 @@ selected_period = selected_years * 365
 
 #for data cashing
 
-@st.cache_data
+@st.cache
 def load_data(ticker):
     data = yf.download(ticker, START, TODAY)
     data.reset_index(inplace = True)
@@ -37,9 +35,6 @@ data_load_state.text("Data has been loaded!")
 
 st.subheader('Raw data')
 st.write(data.tail())
-
-################FIX 'REMOVEROWS´
-data = data.dropna(subset=['Date', 'Close'])
 
 #Plot data
 def plot_data():
@@ -53,18 +48,8 @@ def plot_data():
 plot_data()
 
 #Forecasting with FBprophet
-#Step - prepare some data for Prophet
 df_train = data [['Date', 'Close']]
-df_train = df_train.rename(columns ={"Date": "ds", "Close": 'm'})
-
-##########FIX 'y to NUM'
-df_train['y'] = pd.to_numeric(df_train['y'], errors='coerce')
-###########FIX 'REMOVE NAN in y'
-df_train = df_train.dropna(subset=['y'])
-
-#DEBUG 'dataframes structure and types - show'
-st.write(df_train)
-st.write(df_train.dtypes)
+df_train = df_train.rename(columns ={"Date": "ds", "Close": m})
 
 m = Prophet()
 m.fit(df_train)
@@ -75,11 +60,10 @@ forecast = m.predict(future)
 st.subheader('Forecast data')
 st.write(forecast.tail())
 
-st.write('forecast data plot')
+st.write('forecast data')
 fig2_1 = plot_plotly(m, forecast)
 st.plotly_chart(fig2_1)
 
 st.write('forecast components')
 fig2_2 = m.plot_components(forecast)
 st.write(fig2_2) #not a plotly_chart
-
