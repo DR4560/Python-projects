@@ -18,3 +18,6 @@ Run
 ```console
 streamlit run main.py
 ```
+
+##Result
+![Output|635x380](data/components_sample.gif)
