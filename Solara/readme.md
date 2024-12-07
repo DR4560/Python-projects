@@ -20,7 +20,10 @@ Run
 solara run PyApp_Solara.py 
 ```
 
-##ERRORS-TROUBLESHOOTING: 
+## ERRORS-TROUBLESHOOTING: 
   if you have unexpected error, please put into your code the next definition:
-    def name():
-  where the name is a Page(constantly)
+   
+  ```python
+def name():
+```
+ where the def named as a *Page* (constantly)
