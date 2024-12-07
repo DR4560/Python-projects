@@ -1,6 +1,8 @@
 ## Python Web Application with a Solara in a few minutes
 Some solara apps are easier for implement measuring with a Streamlit.
-Solara provides the familiar features as an alternative for build Web Application with interactive data visualization dashboard)
+Solara provides the familiar features as an alternative for build Web Application with interactive data visualization dashboard.
+
+*Thanks a DeepCharts [Youtube](https://www.youtube.com/watch?v=hXA4JPNXhqQ) user for a code samples!*
 
 ## Preview
 ![IsAPreview|635x380](data/untitled1.png)
